@@ -1,0 +1,40 @@
+# The formula installs, runs and passes brew audit on each platform it
+# covers, from this commit, on every push and pull request.
+
+name: install
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  install:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-15, macos-15-intel, ubuntu-24.04, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Install, test and audit yottactl
+        env:
+          HOMEBREW_NO_AUTO_UPDATE: "1"
+          HOMEBREW_NO_ANALYTICS: "1"
+          HOMEBREW_NO_ENV_HINTS: "1"
+        run: |
+          if ! command -v brew > /dev/null; then
+            [ -x /home/linuxbrew/.linuxbrew/bin/brew ] || NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+            eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          fi
+          brew tap yottabot-platform/tap "$GITHUB_WORKSPACE"
+          brew install yottabot-platform/tap/yottactl
+          brew test yottabot-platform/tap/yottactl
+          brew audit --strict --online yottabot-platform/tap/yottactl
+          yottactl --version
