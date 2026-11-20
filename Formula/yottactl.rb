@@ -2,27 +2,27 @@
 class Yottactl < Formula
   desc "YottaBot's command-line tool"
   homepage "https://yotta.bot/platform"
-  version "1.0.1"
+  version "1.0.2"
 
   on_macos do
     on_arm do
-      url "https://downloads.app.yotta.bot/yottactl/1.0.1/yottactl-1.0.1-darwin-arm64.tar.gz"
-      sha256 "428b8733c46cd481180f8263a838cf4c290517a55b0c3a0fd8b8212568b8bbbf"
+      url "https://downloads.app.yotta.bot/yottactl/1.0.2/yottactl-1.0.2-darwin-arm64.tar.gz"
+      sha256 "8c537d0c1696356993a29323711e9ddd35da1a8a8a8a9daf70cde09a2c3d59a1"
     end
     on_intel do
-      url "https://downloads.app.yotta.bot/yottactl/1.0.1/yottactl-1.0.1-darwin-amd64.tar.gz"
-      sha256 "c359be09da389856872de0c565902ad9afb869e8d936c3f94cf1974a8573941c"
+      url "https://downloads.app.yotta.bot/yottactl/1.0.2/yottactl-1.0.2-darwin-amd64.tar.gz"
+      sha256 "c837d60b582013e5e19c86e6e95f26caa983ce4f7d79115b78cd6b073f7294fd"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://downloads.app.yotta.bot/yottactl/1.0.1/yottactl-1.0.1-linux-arm64.tar.gz"
-      sha256 "4b83c4fb0a4a0162a2f8eb6094787e950845697e5f0b44830a9fb0011dcaea62"
+      url "https://downloads.app.yotta.bot/yottactl/1.0.2/yottactl-1.0.2-linux-arm64.tar.gz"
+      sha256 "912fb856960668a64397f128beaa5fafe4d84b1697558e8461394974b7a5a885"
     end
     on_intel do
-      url "https://downloads.app.yotta.bot/yottactl/1.0.1/yottactl-1.0.1-linux-amd64.tar.gz"
-      sha256 "01f8b1e6910421995c4d1f5eddb08a4954c65718ba163cfa9f158d91403e7f96"
+      url "https://downloads.app.yotta.bot/yottactl/1.0.2/yottactl-1.0.2-linux-amd64.tar.gz"
+      sha256 "e0599304cc2ed2947eadfc18878361fdb8b4d2057bc1cbc215219f8388c406ab"
     end
   end
 
