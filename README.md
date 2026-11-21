@@ -13,4 +13,6 @@ yottactl release updates it here.
 Bugs and requests: open an issue in
 [YottaBot-Platform/yottactl](https://github.com/YottaBot-Platform/yottactl/issues).
 
-© 2026 YottaBot, Inc. All rights reserved.
+yottactl is licensed under the Apache License 2.0, as its
+[repository](https://github.com/YottaBot-Platform/yottactl) says. © 2026
+YottaBot, Inc.
